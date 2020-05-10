@@ -1,7 +1,7 @@
 # HrTask
 Task of Head Result and Task for Remain <br/>
 [![Build Status](https://github.com/7k8m/HrTask/workflows/.NET%20Core/badge.svg?branch=master)](https://github.com/7k8m/HrTask/actions)<br/>
-
+[![CodeFactor](https://www.codefactor.io/repository/github/7k8m/HrTask/badge/master)](https://www.codefactor.io/repository/github/7k8m/HrTask/overview/master)<br/>
 # Test Run
 
 `````
