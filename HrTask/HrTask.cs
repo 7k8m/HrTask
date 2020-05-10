@@ -5,8 +5,6 @@ namespace HrTask
 {
     public class HrTask<H,R> : Task<(H,Task<R>)> 
     {
-        public HrTask( Func<(H, Task<R>)> func) : base(func) {
-
-        }
+        public HrTask(Func<(H, Task<R>)> func) : base(func) {}
     }
 }
