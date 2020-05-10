@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageProjectUrl>https://github.com/7k8m/HrTask/</PackageProjectUrl>
+    <Description>Task of Head Result and Task for Remain </Description>    
   </PropertyGroup>
 
 </Project>
