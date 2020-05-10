@@ -25,5 +25,25 @@ namespace TestHrTask
             var remainResult = result.remainTask.Result;
             CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
         }
+
+        [TestMethod]
+        public async Task TestAsync()
+        {
+            var task = new HrTask<int,int[]>( () => {
+                return (
+                  1, 
+                  new Task<int[]>(() => new int[] { 2, 3 })
+                );
+            });
+            
+            task.Start();
+            var result = await task;
+            
+            Assert.AreEqual(result.headResult, 1);
+
+            var remainResult = await result.remainTask;
+            CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
+        }
+
     }
 }
