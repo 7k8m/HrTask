@@ -24,7 +24,6 @@ namespace TestHrTask
 
             var remainResult = result.remainTask.Result;
             CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
-
         }
     }
 }
