@@ -1,2 +1,2 @@
 # HrTask
-Task resulted in Head and Task for Remain 
+Task of Head Result and Task for Remain 
