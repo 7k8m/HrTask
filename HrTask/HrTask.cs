@@ -23,5 +23,17 @@ namespace HrTask
             ) 
         {             
         }
+
+        ///<summary>
+        /// Construct a HrTask 
+        ///</summary>
+        ///<param name="func">Function to be processed in HrTask</param>
+        public HrTask(Func<(H headResult, Func<R> remainTaskFunc)> func)
+            : this(() => {
+                var r = func();
+                return (r.headResult, new Task<R>(r.remainTaskFunc));
+            })
+        {
+        }
     }
 }
