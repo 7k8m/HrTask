@@ -10,11 +10,15 @@ namespace HrTask
     /// <typeparam name="R">Type of remaining result</typeparam>
     public class HrTask<H,R> : Task<(H headResult,Task<R> remainTask)> 
     {
+        public delegate R RemainFunc();
+        public delegate (H headResult, Task<R> remainTask) HRTask();
+        public delegate (H headResult, RemainFunc remainTaskFunc) HRFunc();
+
         ///<summary>
         /// Construct a HrTask 
         ///</summary>
         ///<param name="func">Function to be processed in HrTask</param>
-        public HrTask(Func<(H headResult, Task<R> remainTask)> func) 
+        public HrTask(HRTask func) 
             : base(() => {
                     var result = func();
                     result.remainTask.Start();
@@ -28,10 +32,10 @@ namespace HrTask
         /// Construct a HrTask 
         ///</summary>
         ///<param name="func">Function to be processed in HrTask</param>
-        public HrTask(Func<(H headResult, Func<R> remainTaskFunc)> func)
+        public HrTask(HRFunc func)
             : this(() => {
                 var r = func();
-                return (r.headResult, new Task<R>(r.remainTaskFunc));
+                return (r.headResult, new Task<R>(() => r.remainTaskFunc()));
             })
         {
         }
