@@ -14,7 +14,6 @@ public void TestRun()
         );
     });
 
-    task.Start();
     var result = task.Result;
 
     Assert.AreEqual(result.headResult, 1);
@@ -35,7 +34,6 @@ public async Task TestAsync()
         );
     });
 
-    task.Start();
     var result = await task;
 
     Assert.AreEqual(result.headResult, 1);
