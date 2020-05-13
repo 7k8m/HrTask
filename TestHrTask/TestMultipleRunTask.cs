@@ -7,7 +7,6 @@ namespace TestHrTask
     [TestClass]
     public class TestMultipleRunTask
     {
-
         [TestMethod]
         public void TestRun()
         {
