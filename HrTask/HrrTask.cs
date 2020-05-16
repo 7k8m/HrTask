@@ -14,7 +14,7 @@ namespace HrTask
     public class HrrTask<H,R1,R2> : Task<(H headResult, HrTask<R1,R2> remainTask)>
     {
 
-        public delegate (R1 resultHead, HrTask<R1,R2>.RemainFunc resultRemaintaskFunc) RemainTaskFunc();
+        public delegate (R1 resultHead, HrTask<R1,R2>.RemainFunc resultRemainTaskFunc) RemainTaskFunc();
         public delegate (H headResult, HrTask<R1,R2> remainTask) HRRTask();
         public delegate (H headResult, RemainTaskFunc remainFunc) HRRFunc();
 
@@ -46,7 +46,7 @@ namespace HrTask
                                 var resultRemainFuncResult = result.remainFunc();
                                 return (
                                     resultRemainFuncResult.resultHead, 
-                                    () => resultRemainFuncResult.resultRemaintaskFunc()
+                                    () => resultRemainFuncResult.resultRemainTaskFunc()
                                 );
                             }
                         )
