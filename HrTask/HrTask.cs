@@ -8,7 +8,7 @@ namespace HrTask
     ///</summary>
     /// <typeparam name="H">Type of heading result</typeparam>
     /// <typeparam name="R">Type of remaining result</typeparam>
-    public class HrTask<H,R> : Task<(H headResult,Task<R> remainTask)> 
+    public class HrTask<H,R> : Task<(H headResult, Task<R> remainTask)> 
     {
         public delegate R RemainFunc();
         public delegate (H headResult, Task<R> remainTask) HRTask();

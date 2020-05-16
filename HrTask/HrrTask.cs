@@ -11,11 +11,11 @@ namespace HrTask
     /// <typeparam name="H">Type of heading result</typeparam>
     /// <typeparam name="R1">Type of remaining result 1</typeparam>
     /// <typeparam name="R2">Type of remaining result 2</typeparam>
-    public class HrrTask<H,R1,R2> : Task<(H headResult,HrTask<R1,R2> remainTask)>
+    public class HrrTask<H,R1,R2> : Task<(H headResult, HrTask<R1,R2> remainTask)>
     {
 
         public delegate (R1 resultHead, HrTask<R1,R2>.RemainFunc resultRemaintaskFunc) RemainTaskFunc();
-        public delegate (H headResult,HrTask<R1,R2> remainTask) HRRTask();
+        public delegate (H headResult, HrTask<R1,R2> remainTask) HRRTask();
         public delegate (H headResult, RemainTaskFunc remainFunc) HRRFunc();
 
         ///<summary>
