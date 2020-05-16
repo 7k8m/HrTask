@@ -8,7 +8,7 @@ namespace TestHrTask
     public class TestMultipleRunTask
     {
         [TestMethod]
-        public void TestRun()
+        public void TestRunTask()
         {
             var multiRunTask = new HrrTask<int,int,int>(() =>
             {
@@ -28,5 +28,27 @@ namespace TestHrTask
             var remain2Result = remainResult.remainTask.Result;
             Assert.AreEqual(remain2Result, 3);
         }
+
+        [TestMethod]
+        public void TestRunFunc()
+        {
+            var multiRunTask = new HrrTask<int,int,int>(() =>
+            {
+                return (
+                    1,
+                    () => (2, 
+                        () => 3));
+            });
+
+            var result = multiRunTask.Result;
+            Assert.AreEqual(result.headResult, 1);
+            var remainResult = result.remainTask.Result;
+
+            Assert.AreEqual(remainResult.headResult, 2);
+
+            var remain2Result = remainResult.remainTask.Result;
+            Assert.AreEqual(remain2Result, 3);
+        }
     }
+
 }
