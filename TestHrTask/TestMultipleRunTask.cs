@@ -10,11 +10,11 @@ namespace TestHrTask
         [TestMethod]
         public void TestRunTask()
         {
-            var multiRunTask = new HrrTask<int,int,int>(() =>
+            var multiRunTask = new HrrTask<int,long,double>(() =>
             {
                 return (
                     1,
-                    new HrTask<int,int>(
+                    new HrTask<long,double>(
                             () => (2, 
                                     () => 3)));
             });
@@ -32,7 +32,7 @@ namespace TestHrTask
         [TestMethod]
         public void TestRunFunc()
         {
-            var multiRunTask = new HrrTask<int,int,int>(() =>
+            var multiRunTask = new HrrTask<int,long,double>(() =>
             {
                 return (
                     1,
