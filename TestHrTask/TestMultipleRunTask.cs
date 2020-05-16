@@ -50,5 +50,4 @@ namespace TestHrTask
             Assert.AreEqual(remain2Result, 3);
         }
     }
-
 }
