@@ -76,6 +76,5 @@ namespace TestHrTask
             var remainResult = await result.remainTask;
             CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
         }
-
     }
 }
