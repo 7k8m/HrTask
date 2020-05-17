@@ -21,8 +21,8 @@ namespace TestHrTask
 
             var result = multiRunTask.Result;
             Assert.AreEqual(result.headResult, 1);
+            
             var remainResult = result.remainTask.Result;
-
             Assert.AreEqual(remainResult.headResult, 2);
 
             var remain2Result = remainResult.remainTask.Result;
@@ -42,8 +42,8 @@ namespace TestHrTask
 
             var result = multiRunTask.Result;
             Assert.AreEqual(result.headResult, 1);
-            var remainResult = result.remainTask.Result;
 
+            var remainResult = result.remainTask.Result;
             Assert.AreEqual(remainResult.headResult, 2);
 
             var remain2Result = remainResult.remainTask.Result;

@@ -17,8 +17,7 @@ namespace TestHrTask
                 );
             });
             
-            var result = task.Result;
-            
+            var result = task.Result;            
             Assert.AreEqual(result.headResult, 1);
 
             var remainResult = result.remainTask.Result;
@@ -36,7 +35,6 @@ namespace TestHrTask
             });
 
             var result = task.Result;
-
             Assert.AreEqual(result.headResult, 1);
 
             var remainResult = result.remainTask.Result;
