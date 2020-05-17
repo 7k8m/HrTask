@@ -7,10 +7,10 @@ Task of Head Result and Task for Remain <br/>
 `````
 public void TestRun()
 {
-    var task = new HrTask<int,int[]>( () => {
+    var task = new HrTask<int, int[]>(() => {
         return (
-          1, 
-          new Task<int[]>(() => new int[] { 2, 3 })
+            1,
+            () => new int[] { 2, 3 }
         );
     });
 
@@ -27,18 +27,17 @@ public void TestRun()
 `````
 public async Task TestAsync()
 {
-    var task = new HrTask<int,int[]>( () => {
-        return (
-          1, 
-          new Task<int[]>(() => new int[] { 2, 3 })
-        );
-    });
+        var task = new HrTask<int, int[]>(() => {
+            return (
+                1,
+                () => new int[] { 2, 3 }
+            );
+        });
 
-    var result = await task;
+        var result = await task;
+        Assert.AreEqual(result.headResult, 1);
 
-    Assert.AreEqual(result.headResult, 1);
-
-    var remainResult = await result.remainTask;
-    CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
+        var remainResult = await result.remainTask;
+        CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
 }
 `````
