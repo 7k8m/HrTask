@@ -15,7 +15,6 @@ public void TestRun()
     });
 
     var result = task.Result;
-
     Assert.AreEqual(result.headResult, 1);
 
     var remainResult = result.remainTask.Result;
