@@ -53,12 +53,29 @@ namespace TestHrTask
                 );
             });
             
-            var result = await task;
-            
+            var result = await task;            
             Assert.AreEqual(result.headResult, 1);
 
             var remainResult = await result.remainTask;
             CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
         }
+
+        [TestMethod]
+        public async Task TestAsyncFunc()
+        {
+            var task = new HrTask<int, int[]>(() => {
+                return (
+                    1,
+                    () => new int[] { 2, 3 }
+                );
+            });
+
+            var result = await task;
+            Assert.AreEqual(result.headResult, 1);
+
+            var remainResult = await result.remainTask;
+            CollectionAssert.AreEqual(remainResult, new int[] { 2, 3 });
+        }
+
     }
 }
