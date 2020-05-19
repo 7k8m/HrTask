@@ -26,7 +26,6 @@ namespace HrTask
                 }
             ) 
         {
-            Start();
         }
 
         ///<summary>

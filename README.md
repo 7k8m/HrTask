@@ -14,6 +14,8 @@ public void TestRun()
         );
     });
 
+    task.Start();
+
     var result = task.Result;
     Assert.AreEqual(result.headResult, 1);
 
@@ -32,6 +34,8 @@ public async Task TestAsync()
             () => new int[] { 2, 3 }
         );
     });
+
+    task.Start();
 
     var result = await task;
     Assert.AreEqual(result.headResult, 1);

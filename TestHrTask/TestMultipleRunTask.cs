@@ -19,6 +19,8 @@ namespace TestHrTask
                                     () => 3)));
             });
 
+            multiRunTask.Start();
+
             var result = multiRunTask.Result;
             Assert.AreEqual(result.headResult, 1);
             
@@ -39,6 +41,8 @@ namespace TestHrTask
                     () => (2, 
                         () => 3));
             });
+
+            multiRunTask.Start();
 
             var result = multiRunTask.Result;
             Assert.AreEqual(result.headResult, 1);

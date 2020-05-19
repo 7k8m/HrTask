@@ -25,11 +25,11 @@ namespace HrTask
         public HrrTask(HRRTask func) 
             : base(() => {
                     var result = func();
+                    result.remainTask.Start();
                     return result;
                 }
             ) 
         {
-            Start();
         }
 
         ///<summary>

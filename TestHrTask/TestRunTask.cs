@@ -16,7 +16,9 @@ namespace TestHrTask
                   new Task<int[]>(() => new int[] { 2, 3 })
                 );
             });
-            
+
+            task.Start();
+
             var result = task.Result;            
             Assert.AreEqual(result.headResult, 1);
 
@@ -34,6 +36,8 @@ namespace TestHrTask
                 );
             });
 
+            task.Start();
+
             var result = task.Result;
             Assert.AreEqual(result.headResult, 1);
 
@@ -50,6 +54,8 @@ namespace TestHrTask
                   new Task<int[]>(() => new int[] { 2, 3 })
                 );
             });
+
+            task.Start();
             
             var result = await task;            
             Assert.AreEqual(result.headResult, 1);
@@ -67,6 +73,8 @@ namespace TestHrTask
                     () => new int[] { 2, 3 }
                 );
             });
+
+            task.Start();
 
             var result = await task;
             Assert.AreEqual(result.headResult, 1);
