@@ -1,6 +1,6 @@
 # HrTask
 Task of Head Result and Task for Remain <br/>
-[![Build Status](https://github.com/DirectSQL/HrTask/workflows/.NET%20Core/badge.svg?branch=master)](https://github.com/7k8m/HrTask/actions)<br/>
+[![Build Status](https://github.com/DirectSQL/HrTask/workflows/.NET%20Core/badge.svg?branch=master)](https://github.com/DirectSQL/HrTask/actions)<br/>
 [![CodeFactor](https://www.codefactor.io/repository/github/DirectSQL/HrTask/badge/master)](https://www.codefactor.io/repository/github/DirectSQL/HrTask/overview/master)<br/>
 
 # Test Run
