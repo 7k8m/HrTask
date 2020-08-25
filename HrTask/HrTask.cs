@@ -11,14 +11,14 @@ namespace HrTask
     public class HrTask<H,R> : Task<(H headResult, Task<R> remainTask)> 
     {
         public delegate R RemainFunc();
-        public delegate (H headResult, Task<R> remainTask) HRTask();
+        public delegate (H headResult, Task<R> remainTask) HRTaskFunc();
         public delegate (H headResult, RemainFunc remainTaskFunc) HRFunc();
 
         ///<summary>
         /// Construct a HrTask 
         ///</summary>
         ///<param name="func">Function to be processed in HrTask</param>
-        public HrTask(HRTask func) 
+        public HrTask(HRTaskFunc func) 
             : base(() => {
                     var result = func();
                     result.remainTask.Start();
